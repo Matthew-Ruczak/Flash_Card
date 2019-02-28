@@ -1,0 +1,8 @@
+- Make sure to change new forms names
+- All forms should use the same properties
+	+ Properties Changed
+		- Name: Set to the name in the planning document
+		- FormBorderStyle: Set to 'Fixed3D'
+		- MaximizeBox: Set to 'False'
+		- StartPosition: Set to 'CenterScreen'
+		- Text: Set to the name in the planning document
