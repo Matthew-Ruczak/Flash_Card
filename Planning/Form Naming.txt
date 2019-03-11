@@ -7,3 +7,7 @@ Text = Property field 'Text'
 - Main Menu
 	+ Name: MainMenu
 	+ Text: Flash Card: Main Menu
+- Create Flash Cards and Modifying Flash Cards
+	+ Name: CreateAndModify
+	+ Text: Create and Modify Flash Cards
+	
