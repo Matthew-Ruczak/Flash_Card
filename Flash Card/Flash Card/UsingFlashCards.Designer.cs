@@ -61,6 +61,7 @@
             this.btnShowAnswer.TabIndex = 2;
             this.btnShowAnswer.Text = "Show Answer";
             this.btnShowAnswer.UseVisualStyleBackColor = true;
+            this.btnShowAnswer.Click += new System.EventHandler(this.btnShowAnswer_Click);
             // 
             // btnNextQuestion
             // 
@@ -71,6 +72,7 @@
             this.btnNextQuestion.TabIndex = 3;
             this.btnNextQuestion.Text = ">";
             this.btnNextQuestion.UseVisualStyleBackColor = true;
+            this.btnNextQuestion.Click += new System.EventHandler(this.btnNextQuestion_Click);
             // 
             // btnPreviousQuestion
             // 
@@ -81,6 +83,7 @@
             this.btnPreviousQuestion.TabIndex = 4;
             this.btnPreviousQuestion.Text = "<";
             this.btnPreviousQuestion.UseVisualStyleBackColor = true;
+            this.btnPreviousQuestion.Click += new System.EventHandler(this.btnPreviousQuestion_Click);
             // 
             // labelInfo1
             // 

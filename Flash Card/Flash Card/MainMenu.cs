@@ -16,5 +16,11 @@ namespace Flash_Card
         {
             InitializeComponent();
         }
+
+        private void btnOpenExistingFlashCard_Click(object sender, EventArgs e)
+        {
+            UsingFlashCards frm = new UsingFlashCards();
+            frm.Show();
+        }
     }
 }
