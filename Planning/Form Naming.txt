@@ -10,4 +10,7 @@ Text = Property field 'Text'
 - Create Flash Cards and Modifying Flash Cards
 	+ Name: CreateAndModify
 	+ Text: Create and Modify Flash Cards
+- Using Flash Cards
+	+ Name: UsingFlashCards
+	+ Text: Flash Card" nameofFlashCard
 	
