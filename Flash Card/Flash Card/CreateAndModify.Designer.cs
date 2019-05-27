@@ -51,7 +51,7 @@
             // 
             this.listBoxOfQuestions.FormattingEnabled = true;
             this.listBoxOfQuestions.Location = new System.Drawing.Point(11, 40);
-            this.listBoxOfQuestions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxOfQuestions.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxOfQuestions.Name = "listBoxOfQuestions";
             this.listBoxOfQuestions.Size = new System.Drawing.Size(379, 134);
             this.listBoxOfQuestions.TabIndex = 1;
@@ -59,17 +59,18 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(71, 177);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(69, 41);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnModify
             // 
             this.btnModify.Location = new System.Drawing.Point(159, 177);
-            this.btnModify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(69, 41);
             this.btnModify.TabIndex = 3;
@@ -79,17 +80,18 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(245, 177);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(74, 41);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(8, 241);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(71, 27);
             this.btnExit.TabIndex = 5;
@@ -99,7 +101,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(317, 241);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(71, 27);
             this.btnSave.TabIndex = 6;
@@ -119,7 +121,7 @@
             this.Controls.Add(this.listBoxOfQuestions);
             this.Controls.Add(this.labelInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "CreateAndModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

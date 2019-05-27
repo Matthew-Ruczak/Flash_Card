@@ -41,6 +41,7 @@
             this.btnCreateFlashCard.TabIndex = 0;
             this.btnCreateFlashCard.Text = "Create Flash Card";
             this.btnCreateFlashCard.UseVisualStyleBackColor = true;
+            this.btnCreateFlashCard.Click += new System.EventHandler(this.btnCreateFlashCard_Click);
             // 
             // btnOpenExistingFlashCard
             // 
