@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+            *** Class Info. ***
+    This class is used to create instances of a Card object
+        - To create a Card Object you need to supply two strings arguments
+            + The first is for the variable 'question'
+            + The Second is for the variable 'answer'
+        - You will then be able to get the value of these variables through the Card Objects Method.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

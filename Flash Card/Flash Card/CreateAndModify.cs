@@ -62,7 +62,10 @@ namespace Flash_Card
             {
                 try
                 {
+                    //Finding the item the user has selected in 'listOfCards'
                     Card selectedCard = listOfCards.getCardAt(listBoxOfQuestions.SelectedIndex);
+
+                    //Checking if the item the user has selected exists (not null)
                     if (selectedCard != null)
                     {
                         //removing selected card
@@ -71,11 +74,13 @@ namespace Flash_Card
                     }
                     else
                     {
+                        //Telling the user an error has happened
                         MessageBox.Show("The card you have selected was not deleted becuase of an error");
                     }
                 }
                 catch
                 {
+                    //Telling the user an error has happened
                     MessageBox.Show("The card you have selected was not deleted becuase of an error");
                 }
             }
