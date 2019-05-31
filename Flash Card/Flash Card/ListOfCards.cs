@@ -35,7 +35,7 @@ namespace Flash_Card
         //Getting the Card at a certain position (Will return a null card if it is not valid)
         public Card getCardAt(int num) {
             //Checking if the requested card # is valid
-            if (num < (getCurrentPosition() - 1) && num >= 0)   //Check if the num is greater than the # of items in the ArrayList or less than 0
+            if (num <= (getNumOfCards() - 1) && num >= 0)   //Check if the num is greater than the # of items in the ArrayList or less than 0
                 return (Card)listOfCards[num];
             else
                 return null;

@@ -7,6 +7,7 @@
         - You will then be able to get the value of these variables through the Card Objects Method.
  */
 
+//      *** Import Statements ***
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,8 @@ namespace Flash_Card
     class Card
     {
         //Fields
-        private string question, answer; //These hold the question and the answer for this card
+        public string question { get; set; }
+        public string answer { get; set; }  //These hold the question and the answer for this card
 
         //Constructor
         public Card(string question, string answer)

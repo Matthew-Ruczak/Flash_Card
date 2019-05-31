@@ -75,13 +75,13 @@ namespace Flash_Card
                     else
                     {
                         //Telling the user an error has happened
-                        MessageBox.Show("The card you have selected was not deleted becuase of an error");
+                        MessageBox.Show("The card you have selected was not deleted becuase of an error (1)");
                     }
                 }
                 catch
                 {
                     //Telling the user an error has happened
-                    MessageBox.Show("The card you have selected was not deleted becuase of an error");
+                    MessageBox.Show("The card you have selected was not deleted becuase of an error (2)");
                 }
             }
         }

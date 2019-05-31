@@ -35,6 +35,7 @@
             this.btnPreviousQuestion = new System.Windows.Forms.Button();
             this.labelInfo1 = new System.Windows.Forms.Label();
             this.labelInfo2 = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // richTextBoxQuestion
@@ -105,6 +106,10 @@
             this.labelInfo2.TabIndex = 6;
             this.labelInfo2.Text = "Answer";
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
             // UsingFlashCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,5 +141,6 @@
         private System.Windows.Forms.Button btnPreviousQuestion;
         private System.Windows.Forms.Label labelInfo1;
         private System.Windows.Forms.Label labelInfo2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
