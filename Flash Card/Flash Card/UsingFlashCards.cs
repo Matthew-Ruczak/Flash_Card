@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ *      *** Class Notes ***
+*/
+
+//      *** Import Statements ***
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,22 +69,28 @@ namespace Flash_Card
         {
             try
             {
+                //Displaying Dialog box to user, and waiting from them to selected a file
                 if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    //Reading from the file the user selected using a stream
                     using (StreamReader r = new StreamReader(openFileDialog.FileName))
                     {
+                        //Reading file into a string
                         string json = r.ReadToEnd();
+                        //Converting the json string into a 'Card' object (Using the below card class)
                         List<tmpCard> tmpListOfCards = JsonConvert.DeserializeObject<List<tmpCard>>(json);
 
+                        //Putting the 'Cards' from the file into the 'listOfCards'
                         foreach (tmpCard c in tmpListOfCards)
                         {
                             listOfCards.addCard(new Card(c.question, c.answer));
                         }
                     }
                 }
-                MessageBox.Show("File was successfuly opened!");
+                //Telling the user the file was successully opened
+                MessageBox.Show("File was successfully opened!");
             }
-            catch (Exception e)
+            catch (Exception e) //An error occurred, displaying error message in a messagebox
             {
                 MessageBox.Show("Error: " + e.Message);
             }
@@ -87,6 +98,7 @@ namespace Flash_Card
         }
     }
 
+    //This Class is used when deserializing the json object (so we do not have the change the 'Card' class
     public class tmpCard
     {
         public string question;

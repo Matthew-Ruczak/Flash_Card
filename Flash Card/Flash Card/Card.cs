@@ -1,11 +1,12 @@
 ﻿/*
-            *** Class Info. ***
-    This class is used to create instances of a Card object
+ *      *** Class Notes ***
+ *      
+ *  This class is used to create instances of a Card object
         - To create a Card Object you need to supply two strings arguments
             + The first is for the variable 'question'
             + The Second is for the variable 'answer'
         - You will then be able to get the value of these variables through the Card Objects Method.
- */
+*/
 
 //      *** Import Statements ***
 using System;
@@ -19,8 +20,7 @@ namespace Flash_Card
     class Card
     {
         //Fields
-        public string question { get; set; }
-        public string answer { get; set; }  //These hold the question and the answer for this card
+        private string question, answer;  //These hold the question and the answer for this card
 
         //Constructor
         public Card(string question, string answer)
