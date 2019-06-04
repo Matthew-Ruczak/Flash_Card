@@ -21,8 +21,10 @@ namespace Flash_Card
     public partial class UsingFlashCards : Form
     {
         //Fields
-        private ListOfCards listOfCards = new ListOfCards();
-        private string currentAnswer;
+        private ListOfCards listOfCards = new ListOfCards();    //The list of cards the user will be using
+        private string currentAnswer;   //Holds the answer to the question
+        private string answerHiddenMessage = "Click the button below to reveal!";
+        private bool answerShown;    //Tells us whether the answer is being shown
 
 
         public UsingFlashCards()
@@ -54,13 +56,25 @@ namespace Flash_Card
         //An event handler that executes when the "Show Answer" button is pressed
         private void btnShowAnswer_Click(object sender, EventArgs e)
         {
-            richTextBoxAnswer.Text = currentAnswer;
+            //Check if the answer is already being shown
+            if (answerShown)
+            {
+                //Hidding the answer
+                richTextBoxAnswer.Text = answerHiddenMessage;
+                answerShown = false;
+            }
+            else
+            {
+                //Showing the answer
+                richTextBoxAnswer.Text = currentAnswer;
+                answerShown = true;
+            }
         }
         //Loads the question in to the form (Hides the answer until the user wants to reveal it)
         private void loadQuestion(Card c)
         {
             richTextBoxQuestion.Text = c.getQuestion();     //Displaying the Question in the question rich text box
-            richTextBoxAnswer.Text = "Click button below to reveal!";   //Instructions to the user
+            richTextBoxAnswer.Text = answerHiddenMessage;   //Instructions to the user
             currentAnswer = c.getAnswer();  //Storing the answer to the question, so it can be revealed when the user wants it
         }
 
