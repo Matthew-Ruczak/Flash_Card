@@ -92,5 +92,11 @@ namespace Flash_Card
                 return false; //Returing false tells us that it was not
             }
         }
+
+        //Returns the all of the cards in an array of objects
+        public Object[] ToArray()
+        {
+            return listOfCards.ToArray();
+        }
     }
 }

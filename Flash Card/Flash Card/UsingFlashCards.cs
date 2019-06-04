@@ -61,12 +61,14 @@ namespace Flash_Card
             {
                 //Hidding the answer
                 richTextBoxAnswer.Text = answerHiddenMessage;
+                btnShowAnswer.Text = "Show Answer";
                 answerShown = false;
             }
             else
             {
                 //Showing the answer
                 richTextBoxAnswer.Text = currentAnswer;
+                btnShowAnswer.Text = "Hide Answer";
                 answerShown = true;
             }
         }
@@ -75,10 +77,11 @@ namespace Flash_Card
         {
             richTextBoxQuestion.Text = c.getQuestion();     //Displaying the Question in the question rich text box
             richTextBoxAnswer.Text = answerHiddenMessage;   //Instructions to the user
+            btnShowAnswer.Text = "Show Answer";
             currentAnswer = c.getAnswer();  //Storing the answer to the question, so it can be revealed when the user wants it
         }
 
-        //Opening the file that contain the questions (Should be in JSON)
+        //Opening the file that contain the questions
         private void openFileAndLoadQuestions()
         {
             try
@@ -86,20 +89,8 @@ namespace Flash_Card
                 //Displaying Dialog box to user, and waiting from them to selected a file
                 if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    //Reading from the file the user selected using a stream
-                    using (StreamReader r = new StreamReader(openFileDialog.FileName))
-                    {
-                        //Reading file into a string
-                        string json = r.ReadToEnd();
-                        //Converting the json string into a 'Card' object (Using the below card class)
-                        List<tmpCard> tmpListOfCards = JsonConvert.DeserializeObject<List<tmpCard>>(json);
-
-                        //Putting the 'Cards' from the file into the 'listOfCards'
-                        foreach (tmpCard c in tmpListOfCards)
-                        {
-                            listOfCards.addCard(new Card(c.question, c.answer));
-                        }
-                    }
+                    //Reading the file and converting it in to a 'ListOfCards'
+                    listOfCards = ReadAndWriteToFile.readFromFile(openFileDialog.FileName);
                 }
                 //Telling the user the file was successully opened
                 MessageBox.Show("File was successfully opened!");
@@ -110,12 +101,5 @@ namespace Flash_Card
             }
             
         }
-    }
-
-    //This Class is used when deserializing the json object (so we do not have the change the 'Card' class
-    public class tmpCard
-    {
-        public string question;
-        public string answer;
     }
 }

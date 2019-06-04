@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Flash_Card
 {
@@ -52,6 +53,31 @@ namespace Flash_Card
 
                 //Adding the new card to the list
                 listBoxOfQuestions.Items.Add(listOfCards.getNumOfCards() + ". " + addFrm.question);
+            }
+        }
+
+        //An event handler that executes when the user click's on the save button
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(listOfCards.getNumOfCards().ToString());
+            try
+            {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Checking to make sure the filename is not empty
+                    if(saveFileDialog.FileName != "")
+                    {
+                        //Reading File and if there is no problems, show message
+                        if(ReadAndWriteToFile.writeToFile(saveFileDialog.FileName, listOfCards))
+                        {
+                            MessageBox.Show("Your FlashCards have been saved!");
+                        }
+                    }
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error: " + er.Message);
             }
         }
 
