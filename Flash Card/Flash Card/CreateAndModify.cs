@@ -32,9 +32,14 @@ namespace Flash_Card
         }
 
         //Constructor #2 (for modifying an existing set of flash cards)
-        public CreateAndModify(Object listOfCards)  //Takes an Object because it does not like that it when it is of type ListOfCards
+        public CreateAndModify(ListOfCards tmpListOfCards)  //Takes an Object because it does not like that it when it is of type ListOfCards
         {
-            this.listOfCards = (ListOfCards)listOfCards;    //Casting the object to be a list of cards
+            InitializeComponent();
+
+            this.listOfCards = tmpListOfCards;    //Casting the object to be a list of cards
+
+            //Updating the listbox to show the cards
+            updateListBox();
         }
 
         //An event hanlder that executes when the user click's on the add button
@@ -114,6 +119,49 @@ namespace Flash_Card
                     //Telling the user an error has happened
                     MessageBox.Show("The card you have selected was not deleted becuase of an error (2)");
                 }
+            }
+        }
+        //An event handler that executes when the user click's on the modify button
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            int cardSelectedIndex = listBoxOfQuestions.SelectedIndex;
+            //Checking if the user has nothing selected in the listbox
+            if (cardSelectedIndex <= -1)
+            {
+                MessageBox.Show("Please select something to modify in the list first!");
+            }
+            else
+            {
+                //Creating an instance of the add card form to get input from the user
+                AddCard addFrm = new AddCard(listOfCards.getCardAt(cardSelectedIndex).getQuestion(),
+                                             listOfCards.getCardAt(cardSelectedIndex).getAnswer());
+                //Changing the name of the form
+                addFrm.Text = "Modify Question";
+
+                //Displaying form and waiting till the user has finished entering the their input
+                if (addFrm.ShowDialog(this) == DialogResult.OK)
+                {
+                    // *** Need to add validation ***
+
+                    //Modifying the card based on the public variables (holds the user's input)
+                    listOfCards.getCardAt(cardSelectedIndex).setQuestion(addFrm.question);
+                    listOfCards.getCardAt(cardSelectedIndex).setAnswer(addFrm.answer);
+
+                    //Updating listbox
+                    updateListBox();
+                }
+            }
+            
+        }
+        //Updates the listbox holding the cards in listOfCards
+        private void updateListBox()
+        {
+            //Clearing the listbox
+            listBoxOfQuestions.Items.Clear();
+            //Putting the cards into the listbox
+            for (int x = 0; x <= (listOfCards.getNumOfCards() - 1); x++)
+            {
+                listBoxOfQuestions.Items.Add(listOfCards.getCardAt(x).getQuestion());
             }
         }
     }

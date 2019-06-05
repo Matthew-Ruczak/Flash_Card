@@ -31,6 +31,7 @@
             this.btnCreateFlashCard = new System.Windows.Forms.Button();
             this.btnOpenExistingFlashCard = new System.Windows.Forms.Button();
             this.btnModifyExistingFlashCard = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // btnCreateFlashCard
@@ -61,6 +62,13 @@
             this.btnModifyExistingFlashCard.TabIndex = 2;
             this.btnModifyExistingFlashCard.Text = "Modifying Existing Flash Card";
             this.btnModifyExistingFlashCard.UseVisualStyleBackColor = true;
+            this.btnModifyExistingFlashCard.Click += new System.EventHandler(this.btnModifyExistingFlashCard_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "JSON|*.json";
+            this.openFileDialog.Title = "Open Existing Flash Cards";
             // 
             // MainMenu
             // 
@@ -84,6 +92,7 @@
         private System.Windows.Forms.Button btnCreateFlashCard;
         private System.Windows.Forms.Button btnOpenExistingFlashCard;
         private System.Windows.Forms.Button btnModifyExistingFlashCard;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

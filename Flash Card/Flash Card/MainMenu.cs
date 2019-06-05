@@ -34,5 +34,25 @@ namespace Flash_Card
             CreateAndModify frm = new CreateAndModify();
             frm.Show();
         }
+        //An event handler that executes when the "Modify Existing Flash Card" button is pressed
+        private void btnModifyExistingFlashCard_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Showing Dialog to select file
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //opening and reading the file
+                    CreateAndModify frm = new CreateAndModify(ReadAndWriteToFile.readFromFile(openFileDialog.FileName));
+                    //Displaying the 'CreateAndModify' form, with the cards inside of it
+                    frm.Show();
+                }
+            }
+            catch (Exception err)
+            {
+                //Displaying the error that occurred
+                MessageBox.Show("Error: " + err);
+            }
+        }
     }
 }

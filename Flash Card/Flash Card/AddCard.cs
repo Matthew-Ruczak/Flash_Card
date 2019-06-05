@@ -16,9 +16,18 @@ namespace Flash_Card
         public string question { get; set; }    //Will hold the question that will be accessible from outside this form
         public string answer { get; set; }      //Will hold the answer that will be accessible from outside this form
 
+        //This is for adding a new card
         public AddCard()
         {
             InitializeComponent();
+        }
+
+        //This is for modifying an existing card
+        public AddCard(string question, string answer)
+        {
+            InitializeComponent();
+            textBoxQuestion.Text = question;
+            textBoxAnswer.Text = answer;
         }
 
         //An event handler that executes when the user clicks the add button

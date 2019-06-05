@@ -12,7 +12,7 @@ using System.Collections;
 
 namespace Flash_Card
 {
-    class ListOfCards
+    public class ListOfCards
     {
         //Fields
         private ArrayList listOfCards = new ArrayList();

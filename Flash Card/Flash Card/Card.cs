@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Flash_Card
 {
-    class Card
+    public class Card
     {
         //Fields
         private string question, answer;  //These hold the question and the answer for this card
@@ -34,5 +34,17 @@ namespace Flash_Card
 
         //Returns the answer
         public string getAnswer() { return answer; }
+
+        //Sets the question
+        public void setQuestion(string question)
+        {
+            this.question = question;
+        }
+
+        //Sets the answer
+        public void setAnswer(string answer)
+        {
+            this.answer = answer;
+        }
     }
 }
