@@ -135,8 +135,7 @@ namespace Flash_Card
                 //Creating an instance of the add card form to get input from the user
                 AddCard addFrm = new AddCard(listOfCards.getCardAt(cardSelectedIndex).getQuestion(),
                                              listOfCards.getCardAt(cardSelectedIndex).getAnswer());
-                //Changing the name of the form
-                addFrm.Text = "Modify Question";
+                
 
                 //Displaying form and waiting till the user has finished entering the their input
                 if (addFrm.ShowDialog(this) == DialogResult.OK)
@@ -149,6 +148,10 @@ namespace Flash_Card
 
                     //Updating listbox
                     updateListBox();
+                }
+                else
+                {
+                    MessageBox.Show("Nothing was modified.");
                 }
             }
             

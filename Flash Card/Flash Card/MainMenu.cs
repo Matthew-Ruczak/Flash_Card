@@ -45,7 +45,7 @@ namespace Flash_Card
                     //opening and reading the file
                     CreateAndModify frm = new CreateAndModify(ReadAndWriteToFile.readFromFile(openFileDialog.FileName));
                     //Displaying the 'CreateAndModify' form, with the cards inside of it
-                    frm.Show();
+                    frm.Show(this);
                 }
             }
             catch (Exception err)

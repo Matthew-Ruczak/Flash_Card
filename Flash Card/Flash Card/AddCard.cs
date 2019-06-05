@@ -26,6 +26,12 @@ namespace Flash_Card
         public AddCard(string question, string answer)
         {
             InitializeComponent();
+
+            //Changing the name of the form
+            this.Text = "Modify Question";
+            btnAdd.Text = "Modify";
+
+            //Setting the question and the answer in the textboxs, of the card the user is modifying
             textBoxQuestion.Text = question;
             textBoxAnswer.Text = answer;
         }
