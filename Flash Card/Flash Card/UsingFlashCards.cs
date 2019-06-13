@@ -79,6 +79,9 @@ namespace Flash_Card
             richTextBoxAnswer.Text = answerHiddenMessage;   //Instructions to the user
             btnShowAnswer.Text = "Show Answer";
             currentAnswer = c.getAnswer();  //Storing the answer to the question, so it can be revealed when the user wants it
+
+            //Updating the counter that shows the user what card they are on, out of the total number of cards
+            labelCardCounter.Text = (listOfCards.getCurrentPosition() + 1) + " / " + listOfCards.getNumOfCards();
         }
 
         //Opening the file that contain the questions

@@ -36,6 +36,7 @@
             this.labelInfo1 = new System.Windows.Forms.Label();
             this.labelInfo2 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.labelCardCounter = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBoxQuestion
@@ -56,7 +57,7 @@
             // 
             // btnShowAnswer
             // 
-            this.btnShowAnswer.Location = new System.Drawing.Point(177, 276);
+            this.btnShowAnswer.Location = new System.Drawing.Point(174, 289);
             this.btnShowAnswer.Name = "btnShowAnswer";
             this.btnShowAnswer.Size = new System.Drawing.Size(135, 23);
             this.btnShowAnswer.TabIndex = 2;
@@ -90,7 +91,7 @@
             // 
             this.labelInfo1.AutoSize = true;
             this.labelInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo1.Location = new System.Drawing.Point(189, 26);
+            this.labelInfo1.Location = new System.Drawing.Point(194, 26);
             this.labelInfo1.Name = "labelInfo1";
             this.labelInfo1.Size = new System.Drawing.Size(94, 24);
             this.labelInfo1.TabIndex = 5;
@@ -100,7 +101,7 @@
             // 
             this.labelInfo2.AutoSize = true;
             this.labelInfo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo2.Location = new System.Drawing.Point(203, 152);
+            this.labelInfo2.Location = new System.Drawing.Point(201, 152);
             this.labelInfo2.Name = "labelInfo2";
             this.labelInfo2.Size = new System.Drawing.Size(80, 24);
             this.labelInfo2.TabIndex = 6;
@@ -110,11 +111,21 @@
             // 
             this.openFileDialog.Filter = "JSON|*.json";
             // 
+            // labelCardCounter
+            // 
+            this.labelCardCounter.AutoSize = true;
+            this.labelCardCounter.Location = new System.Drawing.Point(226, 260);
+            this.labelCardCounter.Name = "labelCardCounter";
+            this.labelCardCounter.Size = new System.Drawing.Size(30, 13);
+            this.labelCardCounter.TabIndex = 7;
+            this.labelCardCounter.Text = "0 / 0";
+            // 
             // UsingFlashCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 311);
+            this.ClientSize = new System.Drawing.Size(483, 324);
+            this.Controls.Add(this.labelCardCounter);
             this.Controls.Add(this.labelInfo2);
             this.Controls.Add(this.labelInfo1);
             this.Controls.Add(this.btnPreviousQuestion);
@@ -142,5 +153,6 @@
         private System.Windows.Forms.Label labelInfo1;
         private System.Windows.Forms.Label labelInfo2;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label labelCardCounter;
     }
 }
