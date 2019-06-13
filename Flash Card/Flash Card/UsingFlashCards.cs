@@ -104,5 +104,11 @@ namespace Flash_Card
             }
             
         }
+
+        //This is an event handler that executes when ever the user press's a key
+        private void onAnyKeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show(sender.ToString());
+        }
     }
 }

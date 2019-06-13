@@ -43,6 +43,7 @@
             // 
             this.richTextBoxQuestion.Location = new System.Drawing.Point(73, 53);
             this.richTextBoxQuestion.Name = "richTextBoxQuestion";
+            this.richTextBoxQuestion.ReadOnly = true;
             this.richTextBoxQuestion.Size = new System.Drawing.Size(340, 78);
             this.richTextBoxQuestion.TabIndex = 0;
             this.richTextBoxQuestion.Text = "";
@@ -51,6 +52,7 @@
             // 
             this.richTextBoxAnswer.Location = new System.Drawing.Point(73, 179);
             this.richTextBoxAnswer.Name = "richTextBoxAnswer";
+            this.richTextBoxAnswer.ReadOnly = true;
             this.richTextBoxAnswer.Size = new System.Drawing.Size(340, 78);
             this.richTextBoxAnswer.TabIndex = 1;
             this.richTextBoxAnswer.Text = "";
@@ -138,6 +140,7 @@
             this.Name = "UsingFlashCards";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flash Card: nameOfFlashCard";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onAnyKeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
