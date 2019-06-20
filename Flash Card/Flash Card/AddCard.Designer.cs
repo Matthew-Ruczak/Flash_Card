@@ -48,7 +48,7 @@
             // labelInfo2
             // 
             this.labelInfo2.AutoSize = true;
-            this.labelInfo2.Location = new System.Drawing.Point(12, 67);
+            this.labelInfo2.Location = new System.Drawing.Point(12, 94);
             this.labelInfo2.Name = "labelInfo2";
             this.labelInfo2.Size = new System.Drawing.Size(45, 13);
             this.labelInfo2.TabIndex = 1;
@@ -56,34 +56,37 @@
             // 
             // textBoxQuestion
             // 
-            this.textBoxQuestion.Location = new System.Drawing.Point(70, 27);
+            this.textBoxQuestion.Location = new System.Drawing.Point(70, 12);
+            this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
-            this.textBoxQuestion.Size = new System.Drawing.Size(291, 20);
+            this.textBoxQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxQuestion.Size = new System.Drawing.Size(311, 45);
             this.textBoxQuestion.TabIndex = 2;
             // 
             // textBoxAnswer
             // 
-            this.textBoxAnswer.Location = new System.Drawing.Point(70, 64);
+            this.textBoxAnswer.Location = new System.Drawing.Point(70, 76);
+            this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
-            this.textBoxAnswer.Size = new System.Drawing.Size(291, 20);
+            this.textBoxAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxAnswer.Size = new System.Drawing.Size(311, 45);
             this.textBoxAnswer.TabIndex = 3;
             // 
             // btnAdd
             // 
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAdd.Location = new System.Drawing.Point(102, 102);
+            this.btnAdd.Location = new System.Drawing.Point(113, 134);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(226, 102);
+            this.btnCancel.Location = new System.Drawing.Point(239, 134);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
@@ -95,7 +98,7 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Dialog;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 137);
+            this.ClientSize = new System.Drawing.Size(420, 169);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.textBoxAnswer);
