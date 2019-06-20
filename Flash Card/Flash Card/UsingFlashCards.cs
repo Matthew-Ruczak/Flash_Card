@@ -77,6 +77,7 @@ namespace Flash_Card
         {
             richTextBoxQuestion.Text = c.getQuestion();     //Displaying the Question in the question rich text box
             richTextBoxAnswer.Text = answerHiddenMessage;   //Instructions to the user
+            answerShown = false;    //Setting the boolean answerShown to false
             btnShowAnswer.Text = "Show Answer";
             currentAnswer = c.getAnswer();  //Storing the answer to the question, so it can be revealed when the user wants it
 
