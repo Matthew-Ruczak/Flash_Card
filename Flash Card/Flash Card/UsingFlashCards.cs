@@ -105,10 +105,22 @@ namespace Flash_Card
             
         }
 
-        //This is an event handler that executes when ever the user press's a key
-        private void onAnyKeyPress(object sender, KeyPressEventArgs e)
+        //Handles the Hotkeys
+        private void UsingFlashCards_KeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show(sender.ToString());
+            //Determining the action the key that was press represents
+            switch (e.KeyValue.ToString().ToUpper())
+            {
+                //Previous Question Hotkey (Currently set to "A")
+                case "65": btnPreviousQuestion_Click(null, null);
+                    break;
+                //Next Question Hotkey (Currently set to "D")
+                case "68": btnNextQuestion_Click(null, null);
+                    break;
+                //Up Arrow Key (Currently set to "S")
+                case "83": btnShowAnswer_Click(null, null);
+                    break;
+            }
         }
     }
 }

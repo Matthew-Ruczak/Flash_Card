@@ -41,12 +41,15 @@
             // 
             // richTextBoxQuestion
             // 
+            this.richTextBoxQuestion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.richTextBoxQuestion.Location = new System.Drawing.Point(73, 53);
             this.richTextBoxQuestion.Name = "richTextBoxQuestion";
             this.richTextBoxQuestion.ReadOnly = true;
             this.richTextBoxQuestion.Size = new System.Drawing.Size(340, 78);
             this.richTextBoxQuestion.TabIndex = 0;
+            this.richTextBoxQuestion.TabStop = false;
             this.richTextBoxQuestion.Text = "";
+            this.richTextBoxQuestion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsingFlashCards_KeyDown);
             // 
             // richTextBoxAnswer
             // 
@@ -55,7 +58,9 @@
             this.richTextBoxAnswer.ReadOnly = true;
             this.richTextBoxAnswer.Size = new System.Drawing.Size(340, 78);
             this.richTextBoxAnswer.TabIndex = 1;
+            this.richTextBoxAnswer.TabStop = false;
             this.richTextBoxAnswer.Text = "";
+            this.richTextBoxAnswer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsingFlashCards_KeyDown);
             // 
             // btnShowAnswer
             // 
@@ -63,9 +68,11 @@
             this.btnShowAnswer.Name = "btnShowAnswer";
             this.btnShowAnswer.Size = new System.Drawing.Size(135, 23);
             this.btnShowAnswer.TabIndex = 2;
+            this.btnShowAnswer.TabStop = false;
             this.btnShowAnswer.Text = "Show Answer";
             this.btnShowAnswer.UseVisualStyleBackColor = true;
             this.btnShowAnswer.Click += new System.EventHandler(this.btnShowAnswer_Click);
+            this.btnShowAnswer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsingFlashCards_KeyDown);
             // 
             // btnNextQuestion
             // 
@@ -74,9 +81,11 @@
             this.btnNextQuestion.Name = "btnNextQuestion";
             this.btnNextQuestion.Size = new System.Drawing.Size(57, 184);
             this.btnNextQuestion.TabIndex = 3;
+            this.btnNextQuestion.TabStop = false;
             this.btnNextQuestion.Text = ">";
             this.btnNextQuestion.UseVisualStyleBackColor = true;
             this.btnNextQuestion.Click += new System.EventHandler(this.btnNextQuestion_Click);
+            this.btnNextQuestion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsingFlashCards_KeyDown);
             // 
             // btnPreviousQuestion
             // 
@@ -85,9 +94,11 @@
             this.btnPreviousQuestion.Name = "btnPreviousQuestion";
             this.btnPreviousQuestion.Size = new System.Drawing.Size(57, 184);
             this.btnPreviousQuestion.TabIndex = 4;
+            this.btnPreviousQuestion.TabStop = false;
             this.btnPreviousQuestion.Text = "<";
             this.btnPreviousQuestion.UseVisualStyleBackColor = true;
             this.btnPreviousQuestion.Click += new System.EventHandler(this.btnPreviousQuestion_Click);
+            this.btnPreviousQuestion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsingFlashCards_KeyDown);
             // 
             // labelInfo1
             // 
@@ -140,7 +151,7 @@
             this.Name = "UsingFlashCards";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flash Card: nameOfFlashCard";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onAnyKeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsingFlashCards_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

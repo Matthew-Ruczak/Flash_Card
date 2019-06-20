@@ -64,9 +64,9 @@ namespace Flash_Card
         //An event handler that executes when the user click's on the save button
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(listOfCards.getNumOfCards().ToString());
             try
             {
+                //Displaying dialogbox to user
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     //Checking to make sure the filename is not empty
@@ -80,7 +80,7 @@ namespace Flash_Card
                     }
                 }
             }
-            catch (Exception er)
+            catch (Exception er)    //An error occurred, showing the message to the user
             {
                 MessageBox.Show("Error: " + er.Message);
             }
