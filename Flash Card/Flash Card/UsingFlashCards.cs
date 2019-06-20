@@ -23,8 +23,8 @@ namespace Flash_Card
         //Fields
         private ListOfCards listOfCards = new ListOfCards();    //The list of cards the user will be using
         private string currentAnswer;   //Holds the answer to the question
-        private string answerHiddenMessage = "Click the button below to reveal!";
-        private bool answerShown;    //Tells us whether the answer is being shown
+        private string answerHiddenMessage; //This holds the message that will be displayed when the answer is hidden
+        private bool answerShown;   //Tells us whether the answer is being shown
 
 
         public UsingFlashCards(ListOfCards c)
@@ -33,8 +33,14 @@ namespace Flash_Card
 
             //Putting the Card into the listOfCards
             listOfCards = c;
+
+            //Setting variable to there default
+            answerShown = false;    //This is becuase the answer is first hidden
+            answerHiddenMessage = "Click the button below to reveal!";  //This is the message that will be displayed when the answer is hidden
+
             //Loading first question when the form loads
             loadQuestion(listOfCards.getNextCard());
+
         }
 
         //An event handler that executes when the "Next" button is pressed
