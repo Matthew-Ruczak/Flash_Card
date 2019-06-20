@@ -27,9 +27,12 @@ namespace Flash_Card
         private bool answerShown;   //Tells us whether the answer is being shown
 
 
-        public UsingFlashCards(ListOfCards c)
+        public UsingFlashCards(ListOfCards c, string fileName)
         {
             InitializeComponent();
+
+            //Setting the name of the form
+            this.Text = "Flash Card: " + fileName;
 
             //Putting the Card into the listOfCards
             listOfCards = c;
