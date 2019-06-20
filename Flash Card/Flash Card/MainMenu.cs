@@ -33,7 +33,7 @@ namespace Flash_Card
                     //opening and reading the file
                     UsingFlashCards frm = new UsingFlashCards(ReadAndWriteToFile.readFromFile(openFileDialog.FileName));
                     //Displaying the 'CreateAndModify' form, with the cards inside of it
-                    frm.Show(this);
+                    frm.ShowDialog();
                 }
             }
             catch (Exception erro)
@@ -46,7 +46,7 @@ namespace Flash_Card
         private void btnCreateFlashCard_Click(object sender, EventArgs e)
         {
             CreateAndModify frm = new CreateAndModify();
-            frm.Show();
+            frm.ShowDialog();
         }
         //An event handler that executes when the "Modify Existing Flash Card" button is pressed
         private void btnModifyExistingFlashCard_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Flash_Card
                     //opening and reading the file
                     CreateAndModify frm = new CreateAndModify(ReadAndWriteToFile.readFromFile(openFileDialog.FileName));
                     //Displaying the 'CreateAndModify' form, with the cards inside of it
-                    frm.Show(this);
+                    frm.ShowDialog();
                 }
             }
             catch (Exception err)
