@@ -27,18 +27,12 @@ namespace Flash_Card
         private bool answerShown;    //Tells us whether the answer is being shown
 
 
-        public UsingFlashCards()
+        public UsingFlashCards(ListOfCards c)
         {
             InitializeComponent();
 
-            ////Test cards (Only for testing, remove when finished)
-            //listOfCards.addCard(new Card("What year did Canada become a country?", "1867"));
-            //listOfCards.addCard(new Card("What is the capital of Canada?", "Ottawa"));
-            //listOfCards.addCard(new Card("What colours are in the Canadian Flag?", "Red and White"));
-
-            //Opens a dialog for the user to select the file they would like to open (Still testing)
-            openFileAndLoadQuestions();
-
+            //Putting the Card into the listOfCards
+            listOfCards = c;
             //Loading first question when the form loads
             loadQuestion(listOfCards.getNextCard());
         }
@@ -82,27 +76,6 @@ namespace Flash_Card
 
             //Updating the counter that shows the user what card they are on, out of the total number of cards
             labelCardCounter.Text = (listOfCards.getCurrentPosition() + 1) + " / " + listOfCards.getNumOfCards();
-        }
-
-        //Opening the file that contain the questions
-        private void openFileAndLoadQuestions()
-        {
-            try
-            {
-                //Displaying Dialog box to user, and waiting from them to selected a file
-                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    //Reading the file and converting it in to a 'ListOfCards'
-                    listOfCards = ReadAndWriteToFile.readFromFile(openFileDialog.FileName);
-                }
-                //Telling the user the file was successully opened
-                MessageBox.Show("File was successfully opened!");
-            }
-            catch (Exception e) //An error occurred, displaying error message in a messagebox
-            {
-                MessageBox.Show("Error: " + e.Message);
-            }
-            
         }
 
         //Handles the Hotkeys

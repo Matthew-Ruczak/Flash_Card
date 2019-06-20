@@ -25,8 +25,22 @@ namespace Flash_Card
         //An event handler that executes when the "Open Existing Flash Card" button is pressed
         private void btnOpenExistingFlashCard_Click(object sender, EventArgs e)
         {
-            UsingFlashCards frm = new UsingFlashCards();
-            frm.Show();
+            try
+            {
+                //Showing Dialog to select file
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //opening and reading the file
+                    UsingFlashCards frm = new UsingFlashCards(ReadAndWriteToFile.readFromFile(openFileDialog.FileName));
+                    //Displaying the 'CreateAndModify' form, with the cards inside of it
+                    frm.Show(this);
+                }
+            }
+            catch (Exception erro)
+            {
+                //Displaying the error that occurred
+                MessageBox.Show("Error: " + erro);
+            }
         }
         //An event handler that executes when the "Create Flash Card" button is pressed
         private void btnCreateFlashCard_Click(object sender, EventArgs e)
