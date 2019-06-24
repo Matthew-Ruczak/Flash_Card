@@ -31,7 +31,8 @@ namespace Flash_Card
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     //opening and reading the file
-                    UsingFlashCards frm = new UsingFlashCards(ReadAndWriteToFile.readFromFile(openFileDialog.FileName));
+                    UsingFlashCards frm = new UsingFlashCards(ReadAndWriteToFile.readFromFile(openFileDialog.FileName),
+                        openFileDialog.FileName.Split('\\').Last().Split('.').First());    //Gets the just the file name, not full path, and no extention
                     //Displaying the 'CreateAndModify' form, with the cards inside of it
                     frm.ShowDialog();
                 }
@@ -57,7 +58,8 @@ namespace Flash_Card
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     //opening and reading the file
-                    CreateAndModify frm = new CreateAndModify(ReadAndWriteToFile.readFromFile(openFileDialog.FileName));
+                    CreateAndModify frm = new CreateAndModify(ReadAndWriteToFile.readFromFile(openFileDialog.FileName),
+                        openFileDialog.FileName.Split('\\').Last().Split('.').First()); //Gets the just the file name, not full path, and no extention
                     //Displaying the 'CreateAndModify' form, with the cards inside of it
                     frm.ShowDialog();
                 }

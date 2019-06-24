@@ -32,9 +32,12 @@ namespace Flash_Card
         }
 
         //Constructor #2 (for modifying an existing set of flash cards)
-        public CreateAndModify(ListOfCards tmpListOfCards)  //Takes an Object because it does not like that it when it is of type ListOfCards
+        public CreateAndModify(ListOfCards tmpListOfCards, string fileName)  //Takes an Object because it does not like that it when it is of type ListOfCards
         {
             InitializeComponent();
+
+            //Setting the text of the form
+            this.Text = "C & M Flash Cards: " + fileName;
 
             this.listOfCards = tmpListOfCards;    //Casting the object to be a list of cards
 
