@@ -37,7 +37,7 @@ namespace Flash_Card
             InitializeComponent();
 
             //Setting the text of the form
-            this.Text = "C & M Flash Cards: " + fileName;
+            this.Text = "FlashCardz C & M: " + fileName;
 
             this.listOfCards = tmpListOfCards;    //Casting the object to be a list of cards
 

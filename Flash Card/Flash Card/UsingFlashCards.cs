@@ -32,7 +32,7 @@ namespace Flash_Card
             InitializeComponent();
 
             //Setting the name of the form
-            this.Text = "Flash Card: " + fileName;
+            this.Text = "FlashCardz: " + fileName;
 
             //Putting the Card into the listOfCards
             listOfCards = c;
